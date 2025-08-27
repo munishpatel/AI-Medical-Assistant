@@ -1,61 +1,247 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Chatbot</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synapse Health - AI-Powered Medical Assistance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
 </head>
 
-
 <body>
-    <div class="container-fluid h-100">
-        <div class="row justify-content-center h-100">
-            <div class="col-md-8 col-xl-6 chat">
-                <div class="card">
-                    <div class="card-header msg_head">
-                        <div class="d-flex bd-highlight">
-                            <div class="img_cont">
-                                <img src="https://cdn-icons-png.flaticon.com/512/387/387569.png"
-                                    class="rounded-circle user_img">
-                                <!-- <img src="https://www.prdistribution.com/spirit/uploads/pressreleases/2019/newsreleases/d83341deb75c4c4f6b113f27b1e42cd8-chatbot-florence-already-helps-thousands-of-patients-to-remember-their-medication.png" class="rounded-circle user_img"> -->
-                                <span class="online_icon"></span>
-                            </div>
-                            <div class="user_info">
-                                <span>Medical Chatbot</span>
-                                <p>Ask me anything!</p>
-                            </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://cdn-icons-png.flaticon.com/512/387/387569.png" alt="Synapse Health" width="40"
+                    height="40" class="d-inline-block align-text-top me-2">
+                Synapse Health
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <h1>Revolutionizing Healthcare with AI</h1>
+                    <p class="lead">Synapse Health provides intelligent medical assistance, connecting patients with the
+                        right information and care through our advanced AI platform.</p>
+                    <div class="mt-4">
+                        <button class="btn btn-primary btn-lg me-3">Get Started</button>
+                        <button class="btn btn-outline-light btn-lg">Learn More</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/387/387569.png" alt="AI Doctor"
+                        class="img-fluid hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h2>Our Features</h2>
+                    <p class="lead">Discover how Synapse Health can transform your healthcare experience</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
                         </div>
+                        <h3>AI Medical Assistant</h3>
+                        <p>Get instant answers to your medical questions with our intelligent chatbot powered by
+                            advanced AI algorithms.</p>
                     </div>
-                    <div id="messageFormeight" class="card-body msg_card_body">
-
-
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-microphone-alt"></i>
+                        </div>
+                        <h3>Voice Interaction</h3>
+                        <p>Coming soon: Speak naturally to our assistant for a hands-free medical consultation
+                            experience.</p>
                     </div>
-                    <div class="card-footer">
-                        <form id="messageArea" class="input-group">
-                            <input type="text" id="text" name="msg" placeholder="Type your message..."
-                                autocomplete="off" class="form-control type_msg" required />
-                            <div class="input-group-append">
-                                <button type="submit" id="send" class="input-group-text send_btn"><i
-                                        class="fas fa-location-arrow"></i></button>
-                            </div>
-                        </form>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Secure & Private</h3>
+                        <p>Your health data is protected with enterprise-grade security and privacy measures.</p>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2>About Synapse Health</h2>
+                    <p>Synapse Health was founded with a mission to make quality healthcare information accessible to
+                        everyone. Our AI-powered platform combines medical expertise with cutting-edge technology to
+                        provide reliable health guidance.</p>
+                    <p>While our assistant doesn't replace professional medical advice, it serves as a first point of
+                        contact for health inquiries and can help you make informed decisions about your wellbeing.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://img.freepik.com/free-vector/medical-technology-concept_23-2148518325.jpg"
+                        alt="Medical Technology" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h2>Get In Touch</h2>
+                    <p class="lead">Have questions? We'd love to hear from you</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 Synapse Health. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-light me-3"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chat Button -->
+    <div class="chat-btn" id="chatBtn">
+        <i class="fas fa-comment-medical"></i>
     </div>
 
+    <!-- Chat Container -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <div class="d-flex align-items-center">
+                <div class="img_cont">
+                    <img src="https://cdn-icons-png.flaticon.com/512/387/387569.png" class="rounded-circle user_img">
+                    <span class="online_icon"></span>
+                </div>
+                <div class="user_info">
+                    <span>Synapse Health Assistant</span>
+                    <p>Ask me anything!</p>
+                </div>
+            </div>
+            <button class="btn-close-chat" id="closeChat">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-body" id="messageFormeight">
+            <div class="d-flex justify-content-start mb-4">
+                <div class="img_cont_msg">
+                    <img src="https://cdn-icons-png.flaticon.com/512/387/387569.png"
+                        class="rounded-circle user_img_msg">
+                </div>
+                <div class="msg_cotainer">
+                    Hello! I'm your Synapse Health assistant. How can I help you today?
+                    <span class="msg_time">Just now</span>
+                </div>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <form id="messageArea" class="input-group">
+                <input type="text" id="text" name="msg" placeholder="Type your message..." autocomplete="off"
+                    class="form-control type_msg" required />
+                <div class="input-group-append">
+                    <button type="submit" id="send" class="input-group-text send_btn">
+                        <i class="fas fa-location-arrow"></i>
+                    </button>
+                </div>
+            </form>
+            <div class="mt-2 text-center">
+                <small class="text-muted">Coming soon: <i class="fas fa-microphone"></i> Voice interaction</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
+            // Toggle chat container
+            $("#chatBtn").click(function () {
+                $("#chatContainer").toggleClass("active");
+            });
+
+            $("#closeChat").click(function () {
+                $("#chatContainer").removeClass("active");
+            });
+
+            // Handle message submission
             $("#messageArea").on("submit", function (event) {
                 const date = new Date();
                 const hour = date.getHours();
@@ -67,6 +253,7 @@
 
                 $("#text").val("");
                 $("#messageFormeight").append(userHtml);
+                $("#messageFormeight").scrollTop($("#messageFormeight")[0].scrollHeight);
 
                 $.ajax({
                     data: {
@@ -77,12 +264,12 @@
                 }).done(function (data) {
                     var botHtml = '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://cdn-icons-png.flaticon.com/512/387/387569.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer">' + data + '<span class="msg_time">' + str_time + '</span></div></div>';
                     $("#messageFormeight").append($.parseHTML(botHtml));
+                    $("#messageFormeight").scrollTop($("#messageFormeight")[0].scrollHeight);
                 });
                 event.preventDefault();
             });
         });
     </script>
-
 </body>
 
 </html>
